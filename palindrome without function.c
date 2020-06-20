@@ -2,12 +2,23 @@
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
-void rev(char x[20]){
-	char y[20];
-	for(int i =0;i<=20;i++){
-		for(int j =20;j>=0;j++)
-			x[i]=y[j];
+int pali(char a[20]){
+	int x=1,i,j,len=0;
+	char b[20];
+	for(i=0;a[i]!='\0';i++)
+		len++;
+	for(i=0,j=len-1;i<len,j>=0;i++,j--){
+		b[j]=a[i];
+	} // Reverse the string
+	for(i=0;i<len;i++){
+		if(a[i]==b[i])  // Comparing string with the reverse string
+			x=0;
+		else{
+			x=1;
+			break;
+		}
 	}
+	return x;
 }
 void main(){
 	char s[20];
@@ -21,12 +32,4 @@ void main(){
 	else if(p==1)
 		printf("The string is not a palindrome.\n");
 	getch();
-}
-int pali(char a[20]){
-	int x=1;
-	char b[20];
-	rev(b[20]);  // Reverse the string
-	if(strcmp(a, b) == 0)  // Comparing string with the reverse string
-		x=0;
-	return x;
 }
