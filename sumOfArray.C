@@ -10,7 +10,7 @@ int f_fun(int n[],int len){
 }
 int w_loop(int n[],int len){
 	int i,res=0;
-	while(len>-1){
+	while(len<=0){
 		res+=n[len];
 		len--;
 	}
